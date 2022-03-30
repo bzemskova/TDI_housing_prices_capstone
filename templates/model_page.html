@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Toy application demoing useful tech.">
+    <meta name="author" content="@gotoariel">
+    <!-- <link rel="icon" href="favicon.ico"> -->
+
+    <title>TDI Housing Price Model</title>
+
+    <!-- Bootstrap core CSS  -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    
+   <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-2.4.2.min.js"></script>
+    <!-- Custom CSS for navbar-->
+    <style>
+    body {
+      padding-top: 70px;
+      padding-left: 70px;
+    }
+    </style>
+  </head>
+
+  <body>
+    <!-- navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-1">
+          <span class="sr-only">Toggle navigation</span>
+          </button>
+          <span class="navbar-brand">Modeling Housing Price Trends</span>
+        </div>
+
+        <div class="collapse navbar-collapse" id="nav-1">
+          <ul class="nav navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Motivation<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/model">Model<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/results">Results Overview</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/regional">Regional Breakdown</a>
+            </li>
+            
+            <!--
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Results</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="#">Overview</a>
+                <a class="dropdown-item" href="#">Regional breakdown action</a>
+              </div>
+            </li>
+            -->
+          </ul>
+          <!-- 
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          -->
+        </div>
+      </div>
+    </nav>
+    <div class="containter">
+    <div class="page-header">
+        <h3> Building a model that predicts <strong>housing price growth rates</strong> using <strong style="color:orange;">economic</strong> and <strong style="color:#728FCE;">environmental</strong> data. </h3>
+    </div>
+    <img src="{{ user_image }}" alt="ModelSchematic" width="800" height="400">
+</div>
+</body>
