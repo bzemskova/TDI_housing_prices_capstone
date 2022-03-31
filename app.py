@@ -2,26 +2,26 @@ from flask import Flask, render_template, request, redirect, session
 from bokeh.plotting import figure, show
 from bokeh.embed import components
 from jinja2 import Template
-import os
+#import os
 
 
 
 app = Flask(__name__)
 
-im_folder = os.path.join('static')
-app.config['UPLOAD_FOLDER'] = im_folder
+#im_folder = os.path.join('static')
+#app.config['UPLOAD_FOLDER'] = im_folder
 #app.vars={}
 
 
 @app.route('/',methods=['GET','POST'])
 def index():
-    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'modelmotivation.jpeg')
-    return render_template("first_page.html", user_image = full_filename)
+    #full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'modelmotivation.jpeg')
+    return render_template("first_page.html", user_image = 'static/modelmotivation.jpeg')
 
 @app.route('/model',methods=['GET','POST'])
 def model():
-    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'modelschematic.jpeg')
-    return render_template("model_page.html", user_image = full_filename)
+    #full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'modelschematic.jpeg')
+    return render_template("model_page.html", user_image = 'static/modelschematic.jpeg')
 
 #@app.route('/model',methods=['GET','POST'])
 #def model():
