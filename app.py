@@ -23,17 +23,29 @@ def model():
     #full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'modelschematic.jpeg')
     return render_template("model_page.html", user_image = 'static/modelschematic.jpeg')
 
+@app.route('/results',methods=['GET','POST'])
+def results():
+    return render_template('econ_env_random_forest_model_static.html')
+
+@app.route('/regional',methods=['GET','POST'])
+def regional():
+    return render_template('econ_env_random_forest_model.html')
+
+@app.route('/prediction',methods=['GET','POST'])
+def prediction():
+    return render_template('predict_profittable_rcp4_5.html')
+
 #@app.route('/model',methods=['GET','POST'])
 #def model():
 #    return render_template('model_page.html')
 
-@app.route('/results',methods=['GET','POST'])
-def results():
-    return render_template('econ_env_linear_model_static.html')
+# @app.route('/results',methods=['GET','POST'])
+# def results():
+#     return render_template('econ_env_linear_model_static.html')
 
-@app.route('/regional',methods=['GET','POST'])
-def regional():
-    return render_template('econ_env_linear_model.html')
+# @app.route('/regional',methods=['GET','POST'])
+# def regional():
+#     return render_template('econ_env_linear_model.html')
 
 #Want 4 different pages in addition to the main page that asks the question:
 #1. Motivation
