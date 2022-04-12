@@ -33,7 +33,7 @@ def regional():
 
 @app.route('/prediction',methods=['GET','POST'])
 def prediction():
-    return render_template('predict_profittable_rcp4_5.html')
+    return render_template('predict_profittable_rcp8_5.html')
 
 #@app.route('/model',methods=['GET','POST'])
 #def model():

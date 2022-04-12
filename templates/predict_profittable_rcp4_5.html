@@ -8,9 +8,12 @@
   </style>
   <style>
     body {
-      padding-top: 70px;
+      padding-top: 40px;
       padding-left: 70px;
     }
+    </style>
+    <style>
+    h3 {text-align: center;}
     </style>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
@@ -63,12 +66,14 @@
           </nav>
           <div class="containter">
           <div class="page-header">
-        <h3>  Including environmental parameters improves regression model results! </h3>
+        <h3>  Predicting where housing prices will grow in the future </h3>
+        <h3> using temperature and precipitation data from IPCC climate model projections </h3>
+        <h3> <strong style="color:#728FCE;"> "Investment Profittability" in terms of relative price growth rates normalized by 2021 house prices </h3>
     </div>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "stroke": null}}, "hconcat": [{"layer": [{"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json", "format": {"feature": "states", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "white", "stroke": "black"}, "height": 240, "projection": {"type": "albersUsa"}, "width": 400}, {"data": {"url": "predict_df.json"}, "mark": {"type": "point", "filled": true}, "encoding": {"color": {"type": "quantitative", "field": "Most_profittable_2021", "legend": null, "scale": {"domain": [0, 0.25], "scheme": "tealblues"}}, "latitude": {"field": "INTPTLAT", "type": "quantitative"}, "longitude": {"field": "INTPTLONG", "type": "quantitative"}}, "projection": {"type": "albersUsa"}, "title": "Based on 2018-2021 data"}]}, {"layer": [{"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json", "format": {"feature": "states", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "white", "stroke": "black"}, "height": 240, "projection": {"type": "albersUsa"}, "width": 400}, {"data": {"url": "predict_df.json"}, "mark": {"type": "point", "filled": true}, "encoding": {"color": {"type": "quantitative", "field": "Most_profittable_2030", "legend": null, "scale": {"domain": [0, 0.25], "scheme": "tealblues"}}, "latitude": {"field": "INTPTLAT", "type": "quantitative"}, "longitude": {"field": "INTPTLONG", "type": "quantitative"}}, "projection": {"type": "albersUsa"}, "title": "Based on 2027-2030 predictions"}]}], "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"};
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "stroke": null}}, "hconcat": [{"layer": [{"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json", "format": {"feature": "states", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "white", "stroke": "black"}, "height": 240, "projection": {"type": "albersUsa"}, "width": 400}, {"data": {"url": "static/predict_df.json"}, "mark": {"type": "point", "filled": true}, "encoding": {"color": {"type": "quantitative", "field": "Most_profittable_2021", "legend": null, "scale": {"domain": [0, 0.25], "scheme": "tealblues"}}, "latitude": {"field": "INTPTLAT", "type": "quantitative"}, "longitude": {"field": "INTPTLONG", "type": "quantitative"}}, "projection": {"type": "albersUsa"}, "title": "Based on 2018-2021 data"}]}, {"layer": [{"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/us-10m.json", "format": {"feature": "states", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "white", "stroke": "black"}, "height": 240, "projection": {"type": "albersUsa"}, "width": 400}, {"data": {"url": "static/predict_df.json"}, "mark": {"type": "point", "filled": true}, "encoding": {"color": {"type": "quantitative", "field": "Most_profittable_2030", "legend": null, "scale": {"domain": [0, 0.25], "scheme": "tealblues"}}, "latitude": {"field": "INTPTLAT", "type": "quantitative"}, "longitude": {"field": "INTPTLONG", "type": "quantitative"}}, "projection": {"type": "albersUsa"}, "title": "Based on 2027-2030 predictions"}]}], "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json"};
       var embedOpt = {"mode": "vega-lite"};
 
       function showError(el, error){
